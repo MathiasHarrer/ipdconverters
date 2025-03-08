@@ -1,0 +1,26 @@
+Package: ipdconverters
+Type: Package
+Title: IPD Common Metric Converters for Depression & Anxiety Scores [BETA]
+Version: 0.0.9000
+Date: 2025-03-08
+Authors@R: c(
+    person("Mathias", "Harrer", email = "mathias.h.harrer@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0001-7016-2687")),
+    person("Antonia", "Sprenger", email = "antonia.sprenger@tum.de", role = "aut", comment = c(ORCID = "0000-0002-1180-7702")),
+    person("Susan", "Illing", email = "susan.illing@mri.tum.de", role = "aut", comment = c(ORCID = "0009-0008-1418-250X")),
+    person("Claudia", "Buntrock", email = "claudia.buntrock@med.ovgu.de", role = "aut", comment = c(ORCID = "0000-0002-4974-5455")))
+Description: This package provides several converter functions to transform 
+  depression or anxiety scores into a common metric. Conversions are performed
+  using crosswalk tables established via item response theory or equipercentile
+  linking methods.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    stats (>= 3.5.2), utils (>= 3.5.2), crayon
+Depends: R (>= 4.1.0) 
+URL: https://github.com/mathiasharrer/ipdconverters
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+RoxygenNote: 7.2.3
+Roxygen: list(markdown = TRUE)
