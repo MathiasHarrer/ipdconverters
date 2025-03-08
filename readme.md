@@ -1,5 +1,7 @@
 # The `ipdconverters` Package
 
+![R-CMD-check](https://github.com/mathiasharrer/ipdconverters/actions/workflows/R-CMD-check.yml/badge.svg)
+
 *Please note that this is a **read-only** repository. Unsolicited PRs requests or issue reports will not be responded to.*
 
 ## Overview
