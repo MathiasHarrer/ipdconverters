@@ -7,6 +7,7 @@ Authors@R: c(
     person("Mathias", "Harrer", email = "mathias.h.harrer@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0001-7016-2687")),
     person("Antonia", "Sprenger", email = "antonia.sprenger@tum.de", role = "aut", comment = c(ORCID = "0000-0002-1180-7702")),
     person("Susan", "Illing", email = "susan.illing@mri.tum.de", role = "aut", comment = c(ORCID = "0009-0008-1418-250X")),
+    person("Marketa", "Ciharova", email = "m.ciharova@vu.nl", role = "aut", comment = c(ORCID = "0000-0002-7131-1549")),
     person("Claudia", "Buntrock", email = "claudia.buntrock@med.ovgu.de", role = "aut", comment = c(ORCID = "0000-0002-4974-5455")))
 Description: This package provides several converter functions to transform 
   depression or anxiety scores into a common metric. Conversions are performed

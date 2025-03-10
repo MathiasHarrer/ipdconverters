@@ -37,4 +37,4 @@ cesd.rev(x)
 
 ## Citation
 
-> Harrer M, Sprenger A, Illing S, Buntrock C (2025). *ipdconverters: IPD Common Metric Converters for Depression & Anxiety Scores [BETA]*. R package version 0.0.9000, <https://github.com/mathiasharrer/ipdconverters>.
+> Harrer M, Sprenger A, Illing S, Ciharova M, Buntrock C (2025). *ipdconverters: IPD Common Metric Converters for Depression & Anxiety Scores [BETA]*. R package version 0.0.9000, <https://github.com/mathiasharrer/ipdconverters>.
