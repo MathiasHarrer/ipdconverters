@@ -221,6 +221,100 @@ phq9.rev = function(x) {
 }
 
 
+#' Convert PROMIS-8a scores to a depression common metric
+#'
+#' This function allows you to convert PROMIS-8a sum scores
+#' to a depression "common metric". Common metric scores
+#' can be "reconverted" to the original scale by appending `.rev` to the respective
+#' converter function.
+#'
+#' @details Conversions are conducted using the crosswalk tables provided in
+#' Wahl et al. ([2014](https://doi.org/10.1016/j.jclinepi.2013.04.019); supplement).
+#' Common metric scores _θ_ are normed so that values of 50 indicate the general
+#' population mean, with a population standard deviation of 10.
+#'
+#' @param x A scalar or vector of scores that should be converted.
+#' @usage
+#' promis8(x)
+#' promis8.rev(x)
+#'
+#' @export promis8 promis8.rev
+#' @aliases promis8.rev
+#' @importFrom stats approxfun
+#' @import utils
+#' @examples
+#' \dontrun{
+#' x <- runif(100,0,30)
+#' promis8(x)
+#' }
+
+promis8 = function(x) {
+  res = approxfun(y = cm.promis8$Theta,
+                  x = cm.promis8$Sum.Scores,
+                  method = "linear",
+                  rule = 2)(x)
+  return(res)
+}
+
+promis8.rev = function(x) {
+  res = approxfun(x = cm.promis8$Theta,
+                  y = cm.promis8$Sum.Scores,
+                  method = "linear",
+                  rule = 2)(x)
+  return(res)
+}
+
+
+
+#' Convert EPDS scores to a depression common metric
+#'
+#' This function allows you to convert scores of the Edinburgh Postnatal Depression Scale
+#' to a depression "common metric". Common metric scores
+#' can be "reconverted" to the original scale by appending `.rev` to the respective
+#' converter function.
+#'
+#' @details Conversions are conducted using the crosswalk tables provided in
+#' Wahl et al. ([2014](https://doi.org/10.1016/j.jclinepi.2013.04.019); supplement)
+#' and Blackwell et al. ([2021](https://doi.org/10.1037/pas0001009)).
+#' Common metric scores _θ_ are normed so that values of 50 indicate the general
+#' population mean, with a population standard deviation of 10.
+#'
+#' @param x A scalar or vector of scores that should be converted.
+#' @usage
+#' epds(x)
+#' epds.rev(x)
+#'
+#' @export epds epds.rev
+#' @aliases epds.rev
+#' @importFrom stats approxfun
+#' @import utils
+#' @examples
+#' \dontrun{
+#' x <- runif(100,0,30)
+#' epds(x)
+#' }
+
+epds = function(x) {
+  cm.epds$Theta[nrow(cm.epds)] = cm.epds$Theta[nrow(cm.epds)]+0.1
+  res = approxfun(y = cm.epds$Theta,
+                  x = cm.epds$Sum.Scores,
+                  method = "linear",
+                  rule = 2)(x)
+  return(res)
+}
+
+epds.rev = function(x) {
+  cm.epds$Theta[nrow(cm.epds)] = cm.epds$Theta[nrow(cm.epds)]+0.1
+  res = suppressWarnings(
+    approxfun(x = cm.epds$Theta,
+                  y = cm.epds$Sum.Scores,
+                  method = "linear",
+                  rule = 2)(x))
+  return(res)
+}
+
+
+
 #' Convert HADS-D scores to a depression common metric
 #'
 #' This function allows you to convert scores of the Hospital Anxiety and Depression Scale (HADS)

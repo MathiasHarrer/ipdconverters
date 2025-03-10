@@ -70,6 +70,24 @@
 "cm.who5"
 
 
+#'  The 'cm.promis8' dataset
+#'
+#' Internal crosswalk dataset.
+#'
+#' @format \code{data.frame}.
+#' @usage data("cm.promis8")
+"cm.promis8"
+
+
+#'  The 'cm.epds' dataset
+#'
+#' Internal crosswalk dataset.
+#'
+#' @format \code{data.frame}.
+#' @usage data("cm.epds")
+"cm.epds"
+
+
 #'  The 'dat.carmody' dataset
 #'
 #' Internal crosswalk dataset.
